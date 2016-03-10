@@ -3,6 +3,7 @@
 #ifdef TRAPFPE
 #include "fpe_x87_sse.h"
 #endif
+#include <math.h>
 
 int main(int argc, char *argv[])
 {
@@ -27,7 +28,9 @@ int main(int argc, char *argv[])
       c = -1.;
     }
 
-  printf("c = %f \n", tmp);
+  printf("c = %f \n", c);
+  printf("tmp = %f \n", tmp);
+
   
   return(EXIT_SUCCESS);
 }

@@ -30,9 +30,8 @@ int main(int argc, char *argv[])
   for(i=0; i<last; i++)
     {
       mysub(&a, mydim);
+	  printf("a = %f \n", a[0]);
+      free(a);
     }
-
-  printf("a = %f \n", a[0]);
-
   return(EXIT_SUCCESS);
 }

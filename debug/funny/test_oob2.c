@@ -24,6 +24,8 @@ int main(int argc, char *argv[])
   printf("%s", errmsg);
 #endif
 
+
+
   for(i=0; i<mydim; i++)
     {
       a[i+1000] = a[i];
@@ -32,6 +34,7 @@ int main(int argc, char *argv[])
   printf("a = %f \n", a[0]);
 
   free(a);
+
 #ifdef DEBUG
   free(errmsg);
 #endif
