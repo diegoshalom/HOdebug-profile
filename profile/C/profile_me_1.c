@@ -1,13 +1,18 @@
 #include <stdlib.h>
 #include <math.h>
+#include <stdio.h>
+#define SIZE 200
 
-#define SIZE 5000
-
+// esta salta como loca de una punta a la otra del vector:
+//     0 5000 10000 15000 ..... 1 5001 10001 15001
 void first_assign(int i1, int i2, double * a, double * b, double * c )
 {  
   a[i2*SIZE+i1] = a[i2*SIZE+i1] + b[i2*SIZE+i1] + c[i2*SIZE+i1];
 }
 
+
+// esta va progresivamente:
+//     0 1 2 3 4 5 6 7
 void second_assign(int i1, int i2, double * a, double * b, double * c )
 {  
   a[i1*SIZE+i2] = a[i1*SIZE+i2] + b[i1*SIZE+i2] + c[i1*SIZE+i2];
@@ -15,7 +20,7 @@ void second_assign(int i1, int i2, double * a, double * b, double * c )
 
 int main( int argc, char * argv[] )
 {
-
+  double suma=0;
   double a[SIZE][SIZE], b[SIZE][SIZE], c[SIZE][SIZE];
 
   int i, j; 
@@ -38,8 +43,13 @@ int main( int argc, char * argv[] )
   for( i = 0; i < SIZE; i++ ){
     for( j = 0; j < SIZE; j++ ){
       second_assign(i, j, &a[0][0], &b[0][0], &c[0][0]);
+      printf("%lf\n",a[0][0]);
+
     }
   }
+//  for( i = 0; i < SIZE; i++ ){
+//	
+//  }}
 
   return 0;
 }
